@@ -60,10 +60,10 @@ func (ns *nodeServer) NodePublishVolume(ctx context.Context, req *csi.NodePublis
 
 	s := req.GetVolumeAttributes()["server"]
 	ep := req.GetVolumeAttributes()["share"]
-	source := fmt.Sprintf("%s:%s", s, ep)
+	source := fmt.Sprintf("nfs://%s/%s", s, ep)
 
 	mounter := mount.New("")
-	err = mounter.Mount(source, targetPath, "nfs", mo)
+	err = mounter.Mount(source, targetPath, "nfusr", mo)
 	if err != nil {
 		if os.IsPermission(err) {
 			return nil, status.Error(codes.PermissionDenied, err.Error())

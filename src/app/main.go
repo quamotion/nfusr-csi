@@ -17,10 +17,11 @@ limitations under the License.
 package main
 
 import (
-	"github.com/quamotion/nfusr-csi/src/nfusr"
 	"flag"
 	"fmt"
 	"os"
+
+	"github.com/quamotion/nfusr-csi/src/nfusr"
 
 	"github.com/spf13/cobra"
 )
@@ -39,8 +40,8 @@ func main() {
 	flag.CommandLine.Parse([]string{})
 
 	cmd := &cobra.Command{
-		Use:   "NFS",
-		Short: "CSI based NFS driver",
+		Use:   "nfusr",
+		Short: "CSI based nfusr driver",
 		Run: func(cmd *cobra.Command, args []string) {
 			handle()
 		},

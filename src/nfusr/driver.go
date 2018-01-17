@@ -35,7 +35,7 @@ type driver struct {
 }
 
 const (
-	driverName = "csi-nfsplugin"
+	driverName = "csi-nfusrplugin"
 )
 
 var (
