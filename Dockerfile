@@ -10,7 +10,7 @@ RUN cd $SRC_DIR/src/app \
 && go get \
 && go build -o /app/nfusr-csi
 
-FROM quamotion/nfusr-docker
+FROM quamotion/nfusr
 
 COPY --from=0 /app/nfusr-csi /usr/bin/nfusr-csi
 
