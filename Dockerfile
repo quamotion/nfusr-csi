@@ -7,4 +7,5 @@ ENV SRC_DIR=/go/src/github.com/quamotion/nfusr-csi/
 ADD . $SRC_DIR
 
 RUN cd $SRC_DIR/src/app \
+&& go get \
 && go build -o /app/nfusr-ci
