@@ -43,7 +43,7 @@ spec:
               mountPath: /var/lib/csi/sockets/pluginproxy/
 
         - name: nfusr-csi
-          image: quay.io/quamotion/nfusr-csi:latest:latest
+          image: quay.io/quamotion/nfusr-csi:0.1
           args :
             - "--nodeid=$(NODE_ID)"
             - "--endpoint=$(CSI_ENDPOINT)"
